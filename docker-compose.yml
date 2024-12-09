@@ -1,0 +1,51 @@
+services:
+  next-ts-app:
+    image: gundam/nextjs:1.0.0
+    container_name: t1-next-ts-app
+    build:
+      context: ./frontend/src
+      dockerfile: local.Dockerfile
+    volumes:
+      - ./frontend/src:/app # 전체 소스 폴더를 마운트
+    restart: always
+    # ports:
+    #   - "3000:3003"
+    # depends_on:
+    #   - backend
+    networks:
+      - my_network
+
+  nginx:
+    image: nginx:latest
+    container_name: t1-nginx
+    # build:
+    #   context: ./nginx
+    #   dockerfile: local.Dockerfile
+    volumes:
+      - ./nginx/conf/conf.d/default.conf:/etc/nginx/conf.d/default.conf
+    restart: always
+    ports:
+      - ${TEST_NGINX_PORT}:80
+    depends_on:
+      - next-ts-app
+    networks:
+      - my_network
+
+  mariadb:
+    image: mariadb:10.6.8
+    container_name: t1-mariadb
+    restart: unless-stopped
+    environment:
+      - MYSQL_ROOT_PASSWORD=$MYSQL_ROOT_PASSWORD
+      # - MYSQL_DATABASE=$MYSQL_DATABASE
+    ports:
+      - 3307:3306
+    volumes:
+      - /Users/deokjoonkang/dev/opt/database/data/react-and-java/mariadb:/var/lib/mysql
+    user: "1000:1000"
+    networks:
+      - my_network
+
+networks:
+  my_network:
+    driver: bridge
