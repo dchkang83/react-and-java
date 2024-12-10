@@ -3,10 +3,10 @@ services:
     image: gundam/nextjs:1.0.0
     container_name: t1-next-ts-app
     build:
-      context: ./frontend/src
+      context: ./next-ts-app/src
       dockerfile: local.Dockerfile
     volumes:
-      - ./frontend/src:/app # 전체 소스 폴더를 마운트
+      - ./next-ts-app/src:/app # 전체 소스 폴더를 마운트
     restart: always
     # ports:
     #   - "3000:3003"

@@ -5,7 +5,7 @@
       "name": "Next.js: debug server-side",
       "type": "node-terminal",
       "request": "launch",
-      "cwd": "${workspaceFolder}/frontend/src",
+      "cwd": "${workspaceFolder}/next-ts-app/src",
       "command": "nvm use v20.9.0 && yarn dev",
       "resolveSourceMapLocations": ["${workspaceFolder}/**", "!**/node_modules/**"],
       "env": {
