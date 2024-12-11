@@ -7,9 +7,12 @@
       "request": "launch",
       "cwd": "${workspaceFolder}/next-ts-app/src",
       "command": "nvm use v20.9.0 && yarn dev",
-      "resolveSourceMapLocations": ["${workspaceFolder}/**", "!**/node_modules/**"],
+      "resolveSourceMapLocations": [
+        "${workspaceFolder}/**",
+        "!**/node_modules/**"
+      ],
       "env": {
-        "NODE_VERSION": "20" // 환경 변수를 통해 Node 버전 제어 가능
+        "NODE_VERSION": "20"
       }
     }
   ]

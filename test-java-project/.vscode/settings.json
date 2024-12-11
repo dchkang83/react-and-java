@@ -1,0 +1,21 @@
+{
+    "java.project.sourcePaths": [
+      "src"
+    ],
+    "java.project.outputPath": "bin",
+    "java.project.referencedLibraries": [],
+    "java.jdt.ls.java.home": "/Users/deokjoonkang/Library/Java/JavaVirtualMachines/corretto-17.0.10/Contents/Home",
+    "java.configuration.runtimes": [
+      {
+        "name": "JavaSE-17",
+        "path": "/Users/deokjoonkang/Library/Java/JavaVirtualMachines/corretto-17.0.10/Contents/Home"
+      }
+    ]
+    // "java.jdt.ls.java.home": "/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home",
+    // "java.configuration.runtimes": [
+    //     {
+    //         "name": "JavaSE-1.8",
+    //         "path": "/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home"
+    //     }
+    // ],
+}
