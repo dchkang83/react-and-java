@@ -29,7 +29,6 @@ public class OpenApiConfig {
   public GroupedOpenApi group1() {
     return GroupedOpenApi.builder()
         .group("1. Version 1")
-        // .pathsToMatch("/api/users/**")
         .pathsToMatch("/v1/**")
         .build();
   }
