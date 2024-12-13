@@ -2,6 +2,31 @@ spring:
   application:
     name: spring-boot-api
 
+  # H2 데이터베이스 설정
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  # H2 콘솔 활성화
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+jwt:
+  # secret: your-256-bit-secret-key-here
+  secret: 12345678901234567890123456789012212313223121321312dsfasdf
+  access-token-validity: 3600000 # 1시간
+  refresh-token-validity: 604800000 # 7일
+
 springdoc:
   swagger-ui:
     enabled: true
