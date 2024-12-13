@@ -5,9 +5,9 @@ WORKDIR /app
 
 # ENV NODE_ENV production
 
-COPY package*.json ./
-COPY yarn.lock ./
-COPY .env.local ./
+COPY src/package*.json ./
+COPY src/yarn.lock ./
+COPY src/.env.local ./
 
 RUN yarn
 
